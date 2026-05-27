@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>101 Things I Love About You</title>
+  <meta name="description" content="A beautifully crafted romantic birthday surprise. 101 reasons my heart belongs to you.">
+  
+  <!-- Modern Stylesheet & Logic scripts -->
+  <link rel="stylesheet" href="style.css">
+  <script src="items.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Shifting Mesh Gradient Backdrop & Particles -->
+  <div class="ambient-bg"></div>
+  <div class="ambient-blob blob-rose"></div>
+  <div class="ambient-blob blob-gold"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ==========================================================================
+       1. LANDING SCREEN (3D ENVELOPE GREETING)
+       ========================================================================== -->
+  <div id="greeting-screen" aria-label="Surprise envelope greeting">
+    <div class="envelope-wrapper" role="button" aria-expanded="false" tabindex="0">
+      <div class="envelope">
+        <div class="flap"></div>
+        <div class="letter">
+          <h2>For My Wonderful N</h2>
+          <p>Every single pal with you is an absolute gift. Here is a small collection of the infinite reasons my heart belongs to you. This is to celebrate you.</p>
+          <div class="letter-heart">❤</div>
+          <button id="proceed-btn" class="letter-btn" aria-label="Open memories board">Open Memories &hearts;</button>
+        </div>
+        <div class="wax-seal"></div>
+      </div>
+    </div>
+    <div class="envelope-hint">Tap Envelope to Open</div>
+  </div>
+
+  <!-- ==========================================================================
+       2. MAIN CONTENT (INTERACTIVE LOVE NOTES BOARD)
+       ========================================================================== -->
+  <main id="main-content" class="container">
+    
+    <!-- Title Section -->
+    <header>
+      <h1>101 Things I Love About N</h1>
+      <p>A celebration of you, our journey, and the infinite details that make you my favorite person.</p>
+    </header>
+
+    <!-- Glassmorphism Stats & Controls Board -->
+    <section class="dashboard-glass" aria-label="Progress tracker and selectors">
+      
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <span class="progress-text">Explored <span id="progress-count">0 / 101</span></span>
+        <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div id="progress-bar" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Controls (Pill Filters & Layout Switches) -->
+      <div class="controls-bar">
+        
+        <!-- Category Filter Pills -->
+        <div id="filter-pills" class="filter-pills" role="tablist" aria-label="Filter love notes by category">
+          <button class="pill-btn active" data-category="all" role="tab" aria-selected="true">All</button>
+          <button class="pill-btn" data-category="personality" role="tab" aria-selected="false">✨ Personality</button>
+          <button class="pill-btn" data-category="details" role="tab" aria-selected="false">🌸 The Little Things</button>
+          <button class="pill-btn" data-category="memories" role="tab" aria-selected="false">❤️ Precious Moments</button>
+          <button class="pill-btn" data-category="future" role="tab" aria-selected="false">💫 Future & Dreams</button>
+        </div>
+
+        <!-- Layout & Music Sound Panel -->
+        <div class="utility-panel">
+          
+          <!-- Grid/List Switch -->
+          <div class="view-toggle" role="group" aria-label="Switch display layouts">
+            <button id="view-mosaic-btn" class="toggle-btn active" aria-label="Switch to grid view">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="2" width="8" height="8" rx="1.5"></rect>
+                <rect x="14" y="2" width="8" height="8" rx="1.5"></rect>
+                <rect x="2" y="14" width="8" height="8" rx="1.5"></rect>
+                <rect x="14" y="14" width="8" height="8" rx="1.5"></rect>
+              </svg>
+              Mosaic
+            </button>
+            <button id="view-timeline-btn" class="toggle-btn" aria-label="Switch to narrative timeline view">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <circle cx="3" cy="6" r="1.5" fill="currentColor"></circle>
+                <circle cx="3" cy="12" r="1.5" fill="currentColor"></circle>
+                <circle cx="3" cy="18" r="1.5" fill="currentColor"></circle>
+              </svg>
+              Timeline
+            </button>
+          </div>
+
+          <!-- Live Generative Chime Synthesizer Toggle -->
+          <button id="sound-btn" class="sound-btn" title="Play Ambient Chimes" aria-label="Toggle background synthesizer music">
+            <div class="equalizer">
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+            </div>
+          </button>
+          
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         3. DYNAMIC CONTENT CONTAINER VIEWS
+         ========================================================================== -->
+    <section aria-label="Love notes showcase grid and streams">
+      
+      <!-- Mosaic View Grid -->
+      <div id="mosaic-view" class="grid-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <!-- Narrative Scroll Timeline View -->
+      <div id="timeline-view" class="timeline-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+      
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       4. INTERACTIVE CARD VIEWER DIALOG (LIGHTBOX)
+       ========================================================================== -->
+  <dialog id="card-dialog" class="card-dialog" aria-modal="true" aria-labelledby="dialog-title">
+    
+    <div class="dialog-wrapper">
+      
+      <!-- Header Area -->
+      <div class="dialog-header">
+        <span id="dialog-index" class="dialog-index">Reason 01 of 101</span>
+        <button id="dialog-close-btn" class="dialog-close-btn" aria-label="Close details viewer">&times;</button>
+      </div>
+
+      <!-- Photo Display Area (Fallback SVG graphics if no image matches) -->
+      <div class="dialog-media-frame">
+        <img id="dialog-photo" class="dialog-photo" src="" alt="Personal Memory Photo" loading="lazy">
+        
+        <div id="dialog-fallback-art" class="dialog-fallback-art">
+          <div class="fallback-spin"></div>
+          <div class="fallback-spin-reverse"></div>
+          <div class="fallback-heart">❤</div>
+        </div>
+      </div>
+
+      <!-- Dynamic Text Content -->
+      <div class="dialog-body">
+        <span id="dialog-category" class="dialog-category">✨ Personality</span>
+        <h2 id="dialog-title" class="dialog-title">Title Here</h2>
+        <p id="dialog-desc" class="dialog-desc">Reason description goes here.</p>
+      </div>
+
+      <!-- Interactive Controls Drawer -->
+      <div class="dialog-footer">
+        
+        <!-- Prev Button -->
+        <button id="dialog-prev-btn" class="dialog-nav-btn" aria-label="Show previous card">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Prev
+        </button>
+
+        <!-- Quick Jump Toggle Grid Icon -->
+        <button id="dialog-jump-btn" class="dialog-jump-toggle" title="Jump to note..." aria-label="Toggle quick-jump selector grid">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="6" cy="6" r="2.5"></circle>
+            <circle cx="12" cy="6" r="2.5"></circle>
+            <circle cx="18" cy="6" r="2.5"></circle>
+            <circle cx="6" cy="12" r="2.5"></circle>
+            <circle cx="12" cy="12" r="2.5"></circle>
+            <circle cx="18" cy="12" r="2.5"></circle>
+            <circle cx="6" cy="18" r="2.5"></circle>
+            <circle cx="12" cy="18" r="2.5"></circle>
+            <circle cx="18" cy="18" r="2.5"></circle>
+          </svg>
+        </button>
+
+        <!-- Next Button -->
+        <button id="dialog-next-btn" class="dialog-nav-btn" aria-label="Show next card">
+          Next
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+        
+      </div>
+
+      <!-- Drawer Panel (101 numerical grid jumping pad) -->
+      <div id="quick-jump-panel" class="quick-jump-panel">
+        <h3 class="quick-jump-title">Choose Love Note</h3>
+        <div id="quick-jump-grid" class="quick-jump-grid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       5. SURPRISE FLOATING ACTION TRIGGER ("SURPRISE ME!")
+       ========================================================================== -->
+  <button id="surprise-btn" class="surprise-float-btn" aria-label="Select random love note">
+    ❤
+    <span class="surprise-tooltip">Surprise Me! 🎲</span>
+  </button>
+
+  <!-- ==========================================================================
+       6. CONGRATS/SURPRISE CONVEX CONFETTI CANVAS OVERLAY
+       ========================================================================== -->
+  <div id="confetti-overlay" aria-hidden="true"></div>
+
+</body>
+</html>
