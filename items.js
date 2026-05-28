@@ -2,128 +2,128 @@ const loveItems = [
   {
     id: 1,
     category: "personality",
-    title: "Your radiating kindness",
-    description: "The way you treat everyone around you with absolute warmth and empathy is a constant inspiration to me. You make the world a gentler, more beautiful place just by being in it."
+    title: "Kindness",
+    description: "Your kindness and empathy towards others is a blessing. Not just to them, but to everyone around you."
   },
   {
     id: 2,
     category: "details",
-    title: "The sparkle in your eyes",
-    description: "How your eyes light up and wrinkle at the corners when you laugh genuinely. It is my favorite view in the entire world, and it never fails to melt my heart."
+    title: "Your smile",
+    description: "I just love seeing your smile. It brings me so much joy and happiness."
   },
   {
     id: 3,
     category: "memories",
-    title: "Our late-night talks",
-    description: "Those quiet hours when the rest of the world is asleep, and we talk about everything and nothing. It is in those simple moments that I feel closest to you."
+    title: "Our late evening car rides",
+    description: "I just love our late evening car rides around the campus. It is a time when we can just be ourselves and enjoy each other's company."
   },
   {
     id: 4,
     category: "future",
-    title: "Reason 4",
-    description: "Type your personal reason here..."
+    title: "Your dedication",
+    description: "I love how you are dedicated to your goals and dreams. You work hard and never give up."
   },
   {
     id: 5,
     category: "personality",
-    title: "Reason 5",
-    description: "Type your personal reason here..."
+    title: "Your care",
+    description: "Your caring nature to always adhere to your friends and family when they need you, without even asking truly makes you special."
   },
   {
     id: 6,
     category: "details",
-    title: "Reason 6",
-    description: "Type your personal reason here..."
+    title: "Your empathy",
+    description: "Your cognitive ability to understand your family and friends, how they are feeling. You always know how to cheer them up."
   },
   {
     id: 7,
     category: "memories",
-    title: "Reason 7",
-    description: "Type your personal reason here..."
+    title: "Our evening walks",
+    description: "Our evening walks that started years ago and spanned parks, tennis courts, the gym, the campus, and more. With no reason other than just to walk and enjoy each other's company, that is life."
   },
   {
     id: 8,
     category: "future",
-    title: "Reason 8",
-    description: "Type your personal reason here..."
+    title: "Fitness",
+    description: "Your promise to fitness and getting up everyday, no matter how the mood, and giving time to the temple that is your body."
   },
   {
     id: 9,
     category: "personality",
-    title: "Reason 9",
-    description: "Type your personal reason here..."
+    title: "Your Fashion",
+    description: "Your sense of fashion is more top-notch than even most magazines! Please tell us how you make your choices. You truly are a DIVA."
   },
   {
     id: 10,
     category: "details",
-    title: "Reason 10",
-    description: "Type your personal reason here..."
+    title: "Your cooking knowledge",
+    description: "Your immense knowledge on delicious and a huge variety of cooking, and the ability to make any dish you/me are craving!"
   },
   {
     id: 11,
     category: "memories",
-    title: "Reason 11",
-    description: "Type your personal reason here..."
+    title: "Our coding nights",
+    description: "Our lovely time when we code, whiteboard, study and grow together and be stronger together and ready for challenges."
   },
   {
     id: 12,
     category: "future",
-    title: "Reason 12",
-    description: "Type your personal reason here..."
+    title: "Your decision making insight",
+    description: "Your hunch and insights are always the way to go!"
   },
   {
     id: 13,
     category: "personality",
-    title: "Reason 13",
-    description: "Type your personal reason here..."
+    title: "Your forgiveness",
+    description: "Your nature of accepting me and forgiving me when I am wrong and allowing me to grow with you and become better for you."
   },
   {
     id: 14,
     category: "details",
-    title: "Reason 14",
-    description: "Type your personal reason here..."
+    title: "Your love for traveling",
+    description: "Your 'always ready to travel' nature has taken us to so many meaningful and enjoyable journeys in life. You have turned me from a stay-home to a go-out person and I never look back!"
   },
   {
     id: 15,
     category: "memories",
-    title: "Reason 15",
-    description: "Type your personal reason here..."
+    title: "Our TV drama times",
+    description: "The times dedicated solely to watching some new drama - be it any language, that's not stopping us. Pair this with some snack and ice cream."
   },
   {
     id: 16,
     category: "future",
-    title: "Reason 16",
-    description: "Type your personal reason here..."
+    title: "Dedication to work and learning",
+    description: "You are always a student. With your strong background, involvement in tech communities, and learning personality, you are crushing it."
   },
   {
     id: 17,
     category: "personality",
-    title: "Reason 17",
-    description: "Type your personal reason here..."
+    title: "Your uncrushable personality",
+    description: "No body at all can tell you what to do. You stand up for yourself and don't let nobody make decisions for you or boss you around."
   },
   {
     id: 18,
     category: "details",
-    title: "Reason 18",
-    description: "Type your personal reason here..."
+    title: "Your music taste",
+    description: "That's how we started, by bonding over tunes of love and compassion, sending each other hidden parcels of love."
   },
   {
     id: 19,
     category: "memories",
-    title: "Reason 19",
-    description: "Type your personal reason here..."
+    title: "Our boba dates",
+    description: "Our yummy boba dates around the world where it's just me you, those refreshing fruity sips, some photos, and some board games."
   },
   {
     id: 20,
     category: "future",
-    title: "Reason 20",
-    description: "Type your personal reason here..."
+    title: "Your strong financial knowledge",
+    description: "Your strong financial knowledge and interests, and your 'always exploring' nature helps us be stronger and ready for anything."
   },
   {
     id: 21,
     category: "personality",
-    title: "Reason 21",
-    description: "Type your personal reason here..."
+    title: "Your motherly nature",
+    description: "Your unconditional motherly love and care to all your little ones."
   },
   {
     id: 22,
