@@ -1,5 +1,5 @@
 /**
- * '101 Things I Love About You' - Application Logic
+ * 'Things I Love About You' - Application Logic
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const readCount = state.exploredItems.size;
     const percentage = total > 0 ? (readCount / total) * 100 : 0;
     
-    dom.progressText.textContent = `${readCount} / ${total} Explored`;
+    dom.progressText.textContent = `${readCount} / ${total}`;
     dom.progressFill.style.width = `${percentage}%`;
   };
 
@@ -539,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dom.quickJumpPanel.classList.remove("active");
 
     // Populate index & category
-    dom.dialogIndex.textContent = `Reason ${id} of 101`;
+    dom.dialogIndex.textContent = `Reason ${id} of ${loveItems.length}`;
     dom.dialogCategory.textContent = getCategoryLabel(item.category);
     dom.dialogTitle.textContent = item.title;
     dom.dialogDesc.textContent = item.description;
@@ -582,9 +582,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Sequences Next/Prev
   const navigateCard = (offset) => {
+    const total = loveItems.length;
     let nextId = state.currentCardId + offset;
-    if (nextId > 101) nextId = 1;
-    if (nextId < 1) nextId = 101;
+    if (nextId > total) nextId = 1;
+    if (nextId < 1) nextId = total;
     
     // Quick fade morph transition
     dom.cardDialog.style.transform = "scale(0.98) translateY(10px)";
@@ -616,7 +617,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const buildQuickJumpGrid = () => {
     dom.quickJumpGrid.innerHTML = "";
     
-    for (let i = 1; i <= 101; i++) {
+    loveItems.forEach(item => {
+      const i = item.id;
       const isExplored = state.exploredItems.has(i);
       
       const node = document.createElement("button");
@@ -629,7 +631,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       
       dom.quickJumpGrid.appendChild(node);
-    }
+    });
   };
 
   const updateQuickJumpCurrentNode = (activeId) => {
